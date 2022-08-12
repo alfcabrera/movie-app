@@ -39,7 +39,6 @@ function App() {
 				placeholder="Search a movie..."
 				onChange={(e) => {
 					setMovie(e.target.value);
-					searchMovie();
 				}}
 			/>
 
@@ -56,7 +55,7 @@ function App() {
 				{/* It's mapping over the movieList array and returning the title, overview, and poster_path. */}
 				{movieList.map((el, key) => (
 					<article className="media" key={key}>
-						<figure className="media-left">{el.poster_path != null ? <img src={`https://image.tmdb.org/t/p/w500${el.poster_path}`} width={128} title={el.title} /> : <img src={`https://via.placeholder.com/128`} title={`Placeholder image for ${el.title}`} />}</figure>
+						<figure className="media-left">{<img src={el.poster_path != null ? `https://image.tmdb.org/t/p/w500${el.poster_path}` : `https://via.placeholder.com/128x192`} width={128} title={el.title} />}</figure>
 						<div className="media-content">
 							<div className="content">
 								<p className="mb-0">
