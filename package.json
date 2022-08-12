@@ -1,5 +1,5 @@
 {
-	"name": "pokemon-app",
+	"name": "movie-app",
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
@@ -11,7 +11,6 @@
 	"dependencies": {
 		"axios": "^0.27.2",
 		"bulma": "^0.9.4",
-		"dotenv": "^16.0.1",
 		"modern-normalize": "^1.1.0",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0"
