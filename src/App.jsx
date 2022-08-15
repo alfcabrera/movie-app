@@ -24,7 +24,10 @@ function App() {
 				poster_path: el.poster_path,
 				release_date: el.release_date,
 				vote_average: el.vote_average,
-				year: el.release_date.substring(0, 4),
+				/* It's using the optional chaining operator to check if the release_date property exists. If it
+				does, it will return the first four characters of the string. If it doesn't, it will return
+				undefined. */
+				year: el.release_date?.substring(0, 4),
 			}))
 		);
 	};
@@ -54,7 +57,7 @@ function App() {
 			<div className="is-flex is-flex-direction-column mt-5">
 				{/* It's mapping over the movieList array and returning the title, overview, and poster_path. */}
 				{movieList.map((el, key) => (
-					<article className="media" key={key}>
+					<article className="media p-5 has-text-white" key={key}>
 						<figure className="media-left">{<img src={el.poster_path != null ? `https://image.tmdb.org/t/p/w500${el.poster_path}` : `https://via.placeholder.com/128x192`} width={128} title={el.title} />}</figure>
 						<div className="media-content">
 							<div className="content">
